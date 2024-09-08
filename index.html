@@ -70,7 +70,6 @@
         width: calc(2 * var(--radius));
         height: calc(2 * var(--radius));
         border-radius: 50%;
-        background: #ddd;
       }
 
       .tree summary::before {
@@ -81,6 +80,14 @@
       .tree details[open] > summary::before {
         background-position: calc(-2 * var(--radius)) 0;
       }
+
+      /* New styles for tag colors */
+      .tree .tag-body::after { background: #ff6b6b; }
+      .tree .tag-ul::after { background: #4ecdc4; }
+      .tree .tag-li::after { background: #45b7d1; }
+      .tree .tag-details::after { background: #f7b731; }
+      .tree .tag-summary::after { background: #5d9cec; }
+      .tree .tag-img::after { background: #ac92ec; }
     </style>
   </head>
   <body class="side-collapsed md-reader">

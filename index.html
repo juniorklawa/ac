@@ -97,8 +97,29 @@
       .tree .tag-summary::after {
         background: #5d9cec;
       }
+      .tree .tag-hr::after,
+      .tree .tag-hr > summary::before {
+        background: #3d1796;
+      }
+
       .tree .tag-img::after {
         background: #ac92ec;
+      }
+
+      .tree .tag-img > summary::before {
+        background-color: #ac92ec;
+        background-image: url("expand-collapse.svg");
+      }
+
+      .tree summary::before {
+        z-index: 1;
+        background-color: #696;
+        background-image: url("expand-collapse.svg");
+        background-position: 0 0;
+      }
+
+      .tree details[open] > summary::before {
+        background-position: calc(-2 * var(--radius)) 0;
       }
     </style>
   </head>
@@ -110,22 +131,22 @@
           <ul>
             <li class="tag-ul">
               <details>
-                <summary>&lt;ul&gt; Botões</summary>
+                <summary>&lt;div&gt; Botões</summary>
                 <ul>
-                  <li class="tag-li">&lt;li&gt; Botão Expandir</li>
-                  <li class="tag-li">&lt;li&gt; Botão Toggle</li>
+                  <li class="tag-li">&lt;button&gt; Botão Expandir</li>
+                  <li class="tag-li">&lt;button&gt; Botão Toggle</li>
                 </ul>
               </details>
             </li>
             <li class="tag-details">
               <details>
-                <summary>&lt;details&gt; Main</summary>
+                <summary>&lt;main&gt; Main</summary>
                 <ul>
                   <li class="tag-details">
                     <details>
-                      <summary>&lt;details&gt; Article</summary>
+                      <summary>&lt;article&gt; Article</summary>
                       <ul>
-                        <li class="tag-li">&lt;li&gt; ÁBACO</li>
+                        <li class="tag-li">&lt;h1&gt; ÁBACO</li>
                         <li class="tag-img">
                           <details>
                             <summary>&lt;img&gt;</summary>
@@ -142,8 +163,8 @@
                         <li class="tag-li">
                           &lt;li&gt; Origem: Babilônia, 2400 a.C.
                         </li>
-                        <li class="tag-summary">
-                          <summary>&lt;summary&gt; Divisor</summary>
+                        <li class="tag-hr">
+                          <summary>&lt;hr&gt; Divisor</summary>
                         </li>
                         <li class="tag-li">
                           &lt;li&gt; PRIMEIRA MÁQUINA CALCULADORA
@@ -163,8 +184,8 @@
                           dígitos e indicar um overflow através do toque de um
                           sino.
                         </li>
-                        <li class="tag-summary">
-                          <summary>&lt;summary&gt; Divisor</summary>
+                        <li class="tag-hr">
+                          <summary>&lt;hr&gt; Divisor</summary>
                         </li>
                         <li class="tag-li">
                           &lt;li&gt; MÁQUINA CALCULADORA DE PASCAL
@@ -184,8 +205,8 @@
                           somas e subtrações, usando mecanismos de rodas
                           dentadas.
                         </li>
-                        <li class="tag-summary">
-                          <summary>&lt;summary&gt; Divisor</summary>
+                        <li class="tag-hr">
+                          <summary>&lt;hr&gt; Divisor</summary>
                         </li>
                         <li class="tag-li">&lt;li&gt; CARTÕES PERFURADOS</li>
                         <li class="tag-img">
@@ -202,8 +223,8 @@
                           Máquina programável com cartões perfurados. A mesma
                           máquina produzia estampas diferentes.
                         </li>
-                        <li class="tag-summary">
-                          <summary>&lt;summary&gt; Divisor</summary>
+                        <li class="tag-hr">
+                          <summary>&lt;hr&gt; Divisor</summary>
                         </li>
                         <li class="tag-li">
                           &lt;li&gt; A MÁQUINA ANALÍTICA DE BABBAGE
@@ -224,8 +245,8 @@
                           características de um computador moderno. No entanto,
                           a máquina nunca chegou a ser finalizada.
                         </li>
-                        <li class="tag-summary">
-                          <summary>&lt;summary&gt; Divisor</summary>
+                        <li class="tag-hr">
+                          <summary>&lt;hr&gt; Divisor</summary>
                         </li>
                         <li class="tag-li">
                           &lt;li&gt; A MÁQUINA ANALÍTICA E ADA LOVELACE

@@ -1,231 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        .tree {
-            --spacing: 1.5rem;
-            --radius: 10px;
-        }
+      .tree {
+        --spacing: 1.5rem;
+        --radius: 10px;
+      }
 
-        .tree li {
-            display: block;
-            position: relative;
-            margin-top: 12px;
-            padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
-        }
+      .tree li {
+        display: block;
+        position: relative;
+        margin-top: 12px;
+        padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+      }
 
-        .tree ul {
-            margin-left: calc(var(--radius) - var(--spacing));
-            margin-top:16px;
-            padding-left: 0;
-        }
+      .tree ul {
+        margin-left: calc(var(--radius) - var(--spacing));
+        margin-top: 16px;
+        padding-left: 0;
+      }
 
-        .tree ul li {
-            border-left: 2px solid #ddd;
-        }
+      .tree ul li {
+        border-left: 2px solid #ddd;
+      }
 
-        .tree ul li:last-child {
-            border-color: transparent;
-        }
+      .tree ul li:last-child {
+        border-color: transparent;
+      }
 
-        .tree ul li::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: calc(var(--spacing) / -2);
-            left: -2px;
-            width: calc(var(--spacing) + 2px);
-            height: calc(var(--spacing) + 1px);
-            border: solid #ddd;
-            border-width: 0 0 2px 2px;
-        }
+      .tree ul li::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(var(--spacing) / -2);
+        left: -2px;
+        width: calc(var(--spacing) + 2px);
+        height: calc(var(--spacing) + 1px);
+        border: solid #ddd;
+        border-width: 0 0 2px 2px;
+      }
 
-        .tree summary {
-            display: block;
-            cursor: pointer;
-        }
+      .tree summary {
+        display: block;
+        cursor: pointer;
+      }
 
-        .tree summary::marker,
-        .tree summary::-webkit-details-marker {
-            display: none;
-        }
+      .tree summary::marker,
+      .tree summary::-webkit-details-marker {
+        display: none;
+      }
 
-        .tree summary:focus {
-            outline: none;
-        }
+      .tree summary:focus {
+        outline: none;
+      }
 
-        .tree summary:focus-visible {
-            outline: 1px dotted #000;
-        }
+      .tree summary:focus-visible {
+        outline: 1px dotted #000;
+      }
 
-        .tree li::after,
-        .tree summary::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: calc(var(--spacing) / 2 - var(--radius));
-            left: calc(var(--spacing) - var(--radius) - 1px);
-            width: calc(2 * var(--radius));
-            height: calc(2 * var(--radius));
-            border-radius: 50%;
-            background: #ddd;
-        }
+      .tree li::after,
+      .tree summary::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(var(--spacing) / 2 - var(--radius));
+        left: calc(var(--spacing) - var(--radius) - 1px);
+        width: calc(2 * var(--radius));
+        height: calc(2 * var(--radius));
+        border-radius: 50%;
+        background: #ddd;
+      }
 
-        .tree summary::before {
-            z-index: 1;
-            background: #696 url('expand-collapse.svg') 0 0;
-        }
+      .tree summary::before {
+        z-index: 1;
+        background: #696 url("expand-collapse.svg") 0 0;
+      }
 
-        .tree details[open] > summary::before {
-            background-position: calc(-2 * var(--radius)) 0;
-        }
+      .tree details[open] > summary::before {
+        background-position: calc(-2 * var(--radius)) 0;
+      }
     </style>
-</head>
-<body class="side-collapsed md-reader">
+  </head>
+  <body class="side-collapsed md-reader">
     <ul class="tree">
-        <li>
-            <details>
-                <summary>Body</summary>
+      <li>
+        <details>
+          <summary>Body</summary>
+          <ul>
+            <li>
+              <details>
+                <summary>Botões</summary>
                 <ul>
-                    <li>
-                        <details>
-                            <summary>Botões</summary>
-                            <ul>
-                                <li>Botão Expandir</li>
-                                <li>Botão Toggle</li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Main</summary>
-                            <ul>
-                                <li>
-                                    <details>
-                                        <summary>Article</summary>
-                                        <ul>
-                                            <li>
-                                                <details>
-                                                    <summary>ÁBACO</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Uma imagem do ábaco, instrumento de contagem usado na Babilônia, 2400 a.C." /></li>
-                                                        <li>Capaz de resolver problemas de adição, subtração, multiplicação e divisão de até 12 inteiros.</li>
-                                                        <li>Origem: Babilônia, 2400 a.C.</li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>PRIMEIRA MÁQUINA CALCULADORA</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Uma representação da primeira máquina calculadora de Wilhelm Schickard" /></li>
-                                                        <li>Wilhelm Schickard (1592-1635): Capaz de realizar as 4 operações básicas com números de seis dígitos e indicar um overflow através do toque de um sino.</li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>MÁQUINA CALCULADORA DE PASCAL</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Imagem da máquina calculadora de Pascal, a Pascalina" /></li>
-                                                        <li>Blaise Pascal (1623-1662): Projetada quando tinha somente 20 anos, a “Pascalina” realizava apenas somas e subtrações, usando mecanismos de rodas dentadas.</li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>CARTÕES PERFURADOS</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Imagem de cartões perfurados usados no tear de Jacquard" /></li>
-                                                        <li>Tear de Joseph-Marie Jacquard (1801): Máquina programável com cartões perfurados. A mesma máquina produzia estampas diferentes.</li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>A MÁQUINA ANALÍTICA DE BABBAGE</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Ilustração da máquina analítica de Charles Babbage" /></li>
-                                                        <li>Charles Babbage (1837): Usava o conceito de “tecer números”. Propôs a máquina analítica, dispositivo projetado para ser programável. Possuía as características de um computador moderno. No entanto, a máquina nunca chegou a ser finalizada.</li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>A MÁQUINA ANALÍTICA E ADA LOVELACE</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Retrato de Ada Lovelace" /></li>
-                                                        <li>Ada Lovelace (1815 - 1852)
-                                                            <ul>
-                                                                <li>Descreveu a máquina de Babbage.</li>
-                                                                <li>Propôs os primeiros algoritmos.</li>
-                                                                <li>Inventou sub-rotinas, laços e saltos condicionais.</li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>A MÁQUINA DE CLASSIFICAÇÃO</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Imagem da máquina de classificação de Herman Hollerith" /></li>
-                                                        <li>Máquina de classificação de Herman Hollerith (1880-1890): Usada para contagem do censo americano de 1890. Dados coletados em cartões perfurados.</li>
-                                                        <li>Enquanto o Censo de 1880 levou 7 anos, o de 1890 levou 2,5 anos.</li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>A COMPUTAÇÃO E AS GUERRAS</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Imagem do computador Mark I da Harvard e Marinha Americana" /></li>
-                                                        <li>Harvard e Marinha americana: Mark I
-                                                            <ul>
-                                                                <li>Pesava 5 toneladas, 17m de comprimento, 2.5m de altura.</li>
-                                                                <li>Capacidade: Multiplicar dois números de dez dígitos em três segundos.</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>Exército americano: ENIAC
-                                                            <ul>
-                                                                <li>Pesava 30 toneladas.</li>
-                                                                <li>Capacidade: 500 multiplicações por segundo.</li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                            <li>
-                                                <details>
-                                                    <summary>CIÊNCIA DA COMPUTAÇÃO</summary>
-                                                    <ul>
-                                                        <li><img src="#" alt="Retrato de Alan Turing" /></li>
-                                                        <li><strong>Alan Turing (1912-1954)</strong></li>
-                                                        <ul>
-                                                            <li>Máquina de Turing: calcular qualquer número e função de acordo com um conjunto de instruções.</li>
-                                                            <li>Formalização de algoritmos.</li>
-                                                        </ul>
-                                                        <li><strong>John Von Neumann (1903-1957)</strong></li>
-                                                        <ul>
-                                                            <li>Projeto lógico de um computador.</li>
-                                                            <li>Armazenamento em memória.</li>
-                                                            <li>Comportamento passo-a-passo determinístico, ou seja, dadas as mesmas entradas e um mesmo programa, tem-se as mesmas saídas sempre.</li>
-                                                        </ul>
-                                                    </ul>
-                                                </details>
-                                            </li>
-                                        </ul>
-                                    </details>
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
+                  <li>Botão Expandir</li>
+                  <li>Botão Toggle</li>
                 </ul>
-            </details>
-        </li>
-    </ul>
-</body>
-</html>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Main</summary>
+                <ul>
+                  <li>
+                    <details>
+                      <summary>Article</summary>
+                      <ul>
+                        <li>ÁBACO</li>
+                        <li>
+                          <img
+                            src="#"
+                            alt="Uma imagem do ábaco, instrumento de contagem usado na Babilônia, 2400 a.C."
+                          />
+                        </li>
+                        <li>
+                          Capaz de resolver problemas de adição, subtração,
+                          multiplicação e divisão de até 12 inteiros.
+                        </li>
+                        <li>Origem: Babilônia, 2400 a.C.</li>
+                        <li>
+                          <summary>Divisor</summary>
+                        </li>
+                        <li>PRIMEIRA MÁQUINA CALCULADORA</li>
+                        <li>
+                          <img
+                            src="#"
+                            alt="Uma representação da primeira máquina calculadora de Wilhelm Schickard"
+                          />
+                        </li>
+                        <li>
+                          Wilhelm Schickard (1592-1635): Capaz de realizar as 4
+                          operações básicas com números de seis dígitos e
+                          indicar um overflow através do toque de um sino.
+                        </li>
+                        <li>
+                          <summary>Divisor</summary>
+                        </li>
+                        <li>MÁQUINA CALCULADORA DE PASCAL</li>
+                        <li>
+                          <img
+                            src="#"
+                            alt="Imagem da máquina calculadora de Pascal, a Pascalina"
+                          />
+                        </li>
+                        <li>
+                          Blaise Pascal (1623-1662): Projetada quando tinha
+                          somente 20 anos, a "Pascalina" realizava apenas somas
+                          e subtrações, usando mecanismos de rodas dentadas.
+                        </li>
 
+                        <li>
+                          <summary>Divisor</summary>
+                        </li>
+                        <li>CARTÕES PERFURADOS</li>
+                        <li>
+                          <img
+                            src="#"
+                            alt="Imagem de cartões perfurados usados no tear de Jacquard"
+                          />
+                        </li>
+                        <li>
+                          Tear de Joseph-Marie Jacquard (1801): Máquina
+                          programável com cartões perfurados. A mesma máquina
+                          produzia estampas diferentes.
+                        </li>
+                        <li>
+                          <summary>Divisor</summary>
+                        </li>
+                        <li>A MÁQUINA ANALÍTICA DE BABBAGE</li>
+                        <li>
+                          <img
+                            src="#"
+                            alt="Ilustração da máquina analítica de Charles Babbage"
+                          />
+                        </li>
+                        <li>
+                          Charles Babbage (1837): Usava o conceito de "tecer
+                          números". Propôs a máquina analítica, dispositivo
+                          projetado para ser programável. Possuía as
+                          características de um computador moderno. No entanto,
+                          a máquina nunca chegou a ser finalizada.
+                        </li>
+                        <li>
+                          <summary>Divisor</summary>
+                        </li>
+                        <li>A MÁQUINA ANALÍTICA E ADA LOVELACE</li>
+                        <li>
+                          <img src="#" alt="Retrato de Ada Lovelace" />
+                        </li>
+                        <li>Ada Lovelace (1815 - 1852)</li>
+                        <li>Descreveu a máquina de Babbage.</li>
+                        <li>Propôs os primeiros algoritmos.</li>
+                        <li>
+                          Inventou sub-rotinas, laços e saltos condicionais.
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </body>
+</html>

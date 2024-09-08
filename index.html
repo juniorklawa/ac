@@ -82,124 +82,172 @@
       }
 
       /* New styles for tag colors */
-      .tree .tag-body::after { background: #ff6b6b; }
-      .tree .tag-ul::after { background: #4ecdc4; }
-      .tree .tag-li::after { background: #45b7d1; }
-      .tree .tag-details::after { background: #f7b731; }
-      .tree .tag-summary::after { background: #5d9cec; }
-      .tree .tag-img::after { background: #ac92ec; }
+      .tree .tag-body::after {
+        background: #ff6b6b;
+      }
+      .tree .tag-ul::after {
+        background: #4ecdc4;
+      }
+      .tree .tag-li::after {
+        background: #45b7d1;
+      }
+      .tree .tag-details::after {
+        background: #f7b731;
+      }
+      .tree .tag-summary::after {
+        background: #5d9cec;
+      }
+      .tree .tag-img::after {
+        background: #ac92ec;
+      }
     </style>
   </head>
   <body class="side-collapsed md-reader">
     <ul class="tree">
-      <li>
+      <li class="tag-body">
         <details>
-          <summary>Body</summary>
+          <summary>&lt;body&gt;</summary>
           <ul>
-            <li>
+            <li class="tag-ul">
               <details>
-                <summary>Botões</summary>
+                <summary>&lt;ul&gt; Botões</summary>
                 <ul>
-                  <li>Botão Expandir</li>
-                  <li>Botão Toggle</li>
+                  <li class="tag-li">&lt;li&gt; Botão Expandir</li>
+                  <li class="tag-li">&lt;li&gt; Botão Toggle</li>
                 </ul>
               </details>
             </li>
-            <li>
+            <li class="tag-details">
               <details>
-                <summary>Main</summary>
+                <summary>&lt;details&gt; Main</summary>
                 <ul>
-                  <li>
+                  <li class="tag-details">
                     <details>
-                      <summary>Article</summary>
+                      <summary>&lt;details&gt; Article</summary>
                       <ul>
-                        <li>ÁBACO</li>
-                        <li>
-                          <img
-                            src="#"
-                            alt="Uma imagem do ábaco, instrumento de contagem usado na Babilônia, 2400 a.C."
-                          />
+                        <li class="tag-li">&lt;li&gt; ÁBACO</li>
+                        <li class="tag-img">
+                          <details>
+                            <summary>&lt;img&gt;</summary>
+                            <p>
+                              alt: Uma imagem do ábaco, instrumento de contagem
+                              usado na Babilônia, 2400 a.C.
+                            </p>
+                          </details>
                         </li>
-                        <li>
-                          Capaz de resolver problemas de adição, subtração,
-                          multiplicação e divisão de até 12 inteiros.
+                        <li class="tag-li">
+                          &lt;li&gt; Capaz de resolver problemas de adição,
+                          subtração, multiplicação e divisão de até 12 inteiros.
                         </li>
-                        <li>Origem: Babilônia, 2400 a.C.</li>
-                        <li>
-                          <summary>Divisor</summary>
+                        <li class="tag-li">
+                          &lt;li&gt; Origem: Babilônia, 2400 a.C.
                         </li>
-                        <li>PRIMEIRA MÁQUINA CALCULADORA</li>
-                        <li>
-                          <img
-                            src="#"
-                            alt="Uma representação da primeira máquina calculadora de Wilhelm Schickard"
-                          />
+                        <li class="tag-summary">
+                          <summary>&lt;summary&gt; Divisor</summary>
                         </li>
-                        <li>
-                          Wilhelm Schickard (1592-1635): Capaz de realizar as 4
-                          operações básicas com números de seis dígitos e
-                          indicar um overflow através do toque de um sino.
+                        <li class="tag-li">
+                          &lt;li&gt; PRIMEIRA MÁQUINA CALCULADORA
                         </li>
-                        <li>
-                          <summary>Divisor</summary>
+                        <li class="tag-img">
+                          <details>
+                            <summary>&lt;img&gt;</summary>
+                            <p>
+                              alt: Uma representação da primeira máquina
+                              calculadora de Wilhelm Schickard
+                            </p>
+                          </details>
                         </li>
-                        <li>MÁQUINA CALCULADORA DE PASCAL</li>
-                        <li>
-                          <img
-                            src="#"
-                            alt="Imagem da máquina calculadora de Pascal, a Pascalina"
-                          />
+                        <li class="tag-li">
+                          &lt;li&gt; Wilhelm Schickard (1592-1635): Capaz de
+                          realizar as 4 operações básicas com números de seis
+                          dígitos e indicar um overflow através do toque de um
+                          sino.
                         </li>
-                        <li>
-                          Blaise Pascal (1623-1662): Projetada quando tinha
-                          somente 20 anos, a "Pascalina" realizava apenas somas
-                          e subtrações, usando mecanismos de rodas dentadas.
+                        <li class="tag-summary">
+                          <summary>&lt;summary&gt; Divisor</summary>
                         </li>
-
-                        <li>
-                          <summary>Divisor</summary>
+                        <li class="tag-li">
+                          &lt;li&gt; MÁQUINA CALCULADORA DE PASCAL
                         </li>
-                        <li>CARTÕES PERFURADOS</li>
-                        <li>
-                          <img
-                            src="#"
-                            alt="Imagem de cartões perfurados usados no tear de Jacquard"
-                          />
+                        <li class="tag-img">
+                          <details>
+                            <summary>&lt;img&gt;</summary>
+                            <p>
+                              alt: Imagem da máquina calculadora de Pascal, a
+                              Pascalina
+                            </p>
+                          </details>
                         </li>
-                        <li>
-                          Tear de Joseph-Marie Jacquard (1801): Máquina
-                          programável com cartões perfurados. A mesma máquina
-                          produzia estampas diferentes.
+                        <li class="tag-li">
+                          &lt;li&gt; Blaise Pascal (1623-1662): Projetada quando
+                          tinha somente 20 anos, a "Pascalina" realizava apenas
+                          somas e subtrações, usando mecanismos de rodas
+                          dentadas.
                         </li>
-                        <li>
-                          <summary>Divisor</summary>
+                        <li class="tag-summary">
+                          <summary>&lt;summary&gt; Divisor</summary>
                         </li>
-                        <li>A MÁQUINA ANALÍTICA DE BABBAGE</li>
-                        <li>
-                          <img
-                            src="#"
-                            alt="Ilustração da máquina analítica de Charles Babbage"
-                          />
+                        <li class="tag-li">&lt;li&gt; CARTÕES PERFURADOS</li>
+                        <li class="tag-img">
+                          <details>
+                            <summary>&lt;img&gt;</summary>
+                            <p>
+                              alt: Imagem de cartões perfurados usados no tear
+                              de Jacquard
+                            </p>
+                          </details>
                         </li>
-                        <li>
-                          Charles Babbage (1837): Usava o conceito de "tecer
-                          números". Propôs a máquina analítica, dispositivo
-                          projetado para ser programável. Possuía as
+                        <li class="tag-li">
+                          &lt;li&gt; Tear de Joseph-Marie Jacquard (1801):
+                          Máquina programável com cartões perfurados. A mesma
+                          máquina produzia estampas diferentes.
+                        </li>
+                        <li class="tag-summary">
+                          <summary>&lt;summary&gt; Divisor</summary>
+                        </li>
+                        <li class="tag-li">
+                          &lt;li&gt; A MÁQUINA ANALÍTICA DE BABBAGE
+                        </li>
+                        <li class="tag-img">
+                          <details>
+                            <summary>&lt;img&gt;</summary>
+                            <p>
+                              alt: Ilustração da máquina analítica de Charles
+                              Babbage
+                            </p>
+                          </details>
+                        </li>
+                        <li class="tag-li">
+                          &lt;li&gt; Charles Babbage (1837): Usava o conceito de
+                          "tecer números". Propôs a máquina analítica,
+                          dispositivo projetado para ser programável. Possuía as
                           características de um computador moderno. No entanto,
                           a máquina nunca chegou a ser finalizada.
                         </li>
-                        <li>
-                          <summary>Divisor</summary>
+                        <li class="tag-summary">
+                          <summary>&lt;summary&gt; Divisor</summary>
                         </li>
-                        <li>A MÁQUINA ANALÍTICA E ADA LOVELACE</li>
-                        <li>
-                          <img src="#" alt="Retrato de Ada Lovelace" />
+                        <li class="tag-li">
+                          &lt;li&gt; A MÁQUINA ANALÍTICA E ADA LOVELACE
                         </li>
-                        <li>Ada Lovelace (1815 - 1852)</li>
-                        <li>Descreveu a máquina de Babbage.</li>
-                        <li>Propôs os primeiros algoritmos.</li>
-                        <li>
-                          Inventou sub-rotinas, laços e saltos condicionais.
+                        <li class="tag-img">
+                          <details>
+                            <summary>&lt;img&gt;</summary>
+                            <p>alt: Retrato de Ada Lovelace</p>
+                          </details>
+                        </li>
+                        <li class="tag-li">
+                          &lt;li&gt; Ada Lovelace (1815 - 1852)
+                        </li>
+                        <li class="tag-li">
+                          &lt;li&gt; Descreveu a máquina de Babbage.
+                        </li>
+                        <li class="tag-li">
+                          &lt;li&gt; Propôs os primeiros algoritmos.
+                        </li>
+                        <li class="tag-li">
+                          &lt;li&gt; Inventou sub-rotinas, laços e saltos
+                          condicionais.
                         </li>
                       </ul>
                     </details>
